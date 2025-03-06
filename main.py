@@ -1,22 +1,22 @@
-# Open the file in read mode
-with open('example.txt', 'r') as file:
-    # Read the contents of the file
-    content = file.read()
+file_name = input("file name with extension: ")
+with open(file_name, 'r') as txt:
+    content = txt.read()
+    txt.close()
 
-# Print the current contents of the file
-print("Current content of the file:")
-print(content)
+mode = input("open as read/write? (r/w) ")
+if mode == 'w':
+    mode = input("append/overwrite? (a/o) ")
 
-# Open the file in write mode
-with open('example.txt', 'w') as file:
-    # Write new content to the file
-    file.write("This is the new content of the file.")
+    if mode == 'o':
+        with open(file_name, 'w') as txt:
+            txt.write(input("Enter text to write: "))
+            txt.close()
 
-# Open the file again in read mode to verify the changes
-with open('example.txt', 'r') as file:
-    # Read the new contents of the file
-    new_content = file.read()
+    elif mode == 'a':
+        with open(file_name, 'a') as txt:
+            txt.write(input("Enter text to append, use \\n for new line: ").replace("\\n", "\n"))
 
-# Print the new contents of the file
-print("New content of the file:")
-print(new_content)
+elif mode == 'r':
+    with open(file_name, 'r') as txt:
+        print(txt.read())
+        txt.close() 
