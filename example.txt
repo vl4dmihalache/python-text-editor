@@ -1,3 +1,1 @@
-Overwrittenhello\nthis is a test\nof the file!!this is test\nwaooweojr aie\nsioifhafa
-sadas
-adfa
+This is an example file that you can use to edit.
